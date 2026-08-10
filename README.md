@@ -105,11 +105,15 @@ Differences in freight value, tonnage, geography, commodity, or mode should not 
 
 ![Freight Mirror Cover](Screenshots/freight-mirror-tab1-cover.png)
 
+<p align="center"><em>Freight Mirror — Cover</em></p>
+
 ### Origin Profile
 
 Explore freight originating in a selected FAF zone, including top destinations and commodities.
 
 ![Freight Mirror Origin Profile](Screenshots/freight-mirror-tab2-origin-profile.png)
+
+<p align="center"><em>Freight Mirror — Origin Profile</em></p>
 
 ### Mode & Trade
 
@@ -117,11 +121,15 @@ Compare freight tonnage and freight value across transportation modes and trade 
 
 ![Freight Mirror Mode and Trade](Screenshots/freight-mirror-tab4-mode-trade.png)
 
+<p align="center"><em>Freight Mirror — Mode & Trade</em></p>
+
 ### International Flow Explorer
 
 Explore import and export flows across domestic and foreign geography.
 
 ![Freight Mirror International Flow Explorer](Screenshots/freight-mirror-tab6-intl-flow.png)
+
+<p align="center"><em>Freight Mirror — International Flow Explorer</em></p>
 
 ## Version
 
