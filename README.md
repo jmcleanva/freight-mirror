@@ -4,6 +4,14 @@ Freight Mirror is a Power BI analytical reference for exploring U.S. freight flo
 
 Version 1.0 provides a focused 2022 benchmark view of freight origins, destinations, commodities, transportation modes, trade types, tonnage, freight value, and value per ton.
 
+## Download
+
+The Power BI report file is available from the GitHub Releases page:
+
+- **Freight Mirror v1.0.pbix** — included as the primary release asset
+
+Open the repository’s **Releases** section and select **Freight Mirror v1.0** to download the PBIX file.
+
 ## What Freight Mirror helps answer
 
 - What kinds of freight originate in a particular U.S. region?
