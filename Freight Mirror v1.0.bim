@@ -1,0 +1,5526 @@
+{
+  "name": "Freight Mirror v1_0",
+  "compatibilityLevel": 1567,
+  "model": {
+    "culture": "en-US",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "Commodity",
+        "lineageTag": "9268f2d4-5772-418d-b18e-2972be531fbe",
+        "columns": [
+          {
+            "name": "Commodity",
+            "dataType": "string",
+            "sourceColumn": "Commodity",
+            "lineageTag": "f18a9deb-a2aa-4d14-9705-d5bb982f33f4",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Context",
+            "dataType": "string",
+            "sourceColumn": "Context",
+            "lineageTag": "9fe581ff-5c55-47a7-8ece-6a47f19b4ae2",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Commodity",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Access.Database(File.Contents(\"C:\\Users\\jspmc\\OneDrive\\Mirror Projects\\Freight Mirror\\FAF 6.0\\FAF6.0_access.accdb\"), [CreateNavigationProperties=true]),",
+                "    _Commodity = Source{[Schema=\"\",Item=\"Commodity\"]}[Data]",
+                "in",
+                "    _Commodity"
+              ]
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ]
+      },
+      {
+        "name": "FAF_60",
+        "lineageTag": "07c3a28d-770b-4ee8-b550-2a911f4ca1e9",
+        "columns": [
+          {
+            "name": "fr_orig",
+            "dataType": "string",
+            "sourceColumn": "fr_orig",
+            "lineageTag": "18bb686a-142e-4ab6-b311-e478c541004c",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "dms_orig",
+            "dataType": "string",
+            "sourceColumn": "dms_orig",
+            "lineageTag": "fe4a7723-1cc0-4622-921b-b08c24c98378",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "dms_dest",
+            "dataType": "string",
+            "sourceColumn": "dms_dest",
+            "lineageTag": "f4f103c9-6cd9-4572-a532-750a721d85a1",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "fr_dest",
+            "dataType": "string",
+            "sourceColumn": "fr_dest",
+            "lineageTag": "3f536b7c-faab-4972-b2ab-944a263c8781",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "fr_inmode",
+            "dataType": "string",
+            "sourceColumn": "fr_inmode",
+            "lineageTag": "f6b2a849-a070-40f7-a783-614003de24ba",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "dms_mode",
+            "dataType": "string",
+            "sourceColumn": "dms_mode",
+            "lineageTag": "3e6c7f21-7fc3-4467-b5e1-a32e69603fde",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "fr_outmode",
+            "dataType": "string",
+            "sourceColumn": "fr_outmode",
+            "lineageTag": "63d97669-ac6d-4c59-a3cc-43a0ff88805c",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "sctg2",
+            "dataType": "string",
+            "sourceColumn": "sctg2",
+            "lineageTag": "6f7a1428-3e12-41db-9d59-75159802f6ab",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "trade_type",
+            "dataType": "string",
+            "sourceColumn": "trade_type",
+            "lineageTag": "c745c527-158e-4ce2-8fc8-9f6c2804c3ad",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "tons_2022",
+            "dataType": "double",
+            "sourceColumn": "tons_2022",
+            "lineageTag": "f2a22ffc-0c0e-4b9a-989b-4e6effe4733b",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "value_2022",
+            "dataType": "double",
+            "sourceColumn": "value_2022",
+            "lineageTag": "1cdffdf4-2003-4be2-9d16-40d11f3740d1",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FAF_60",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Access.Database(File.Contents(\"C:\\Users\\jspmc\\OneDrive\\Mirror Projects\\Freight Mirror\\FAF 6.0\\FAF6.0_access.accdb\"), [CreateNavigationProperties=true]),",
+                "    _FAF_60 = Source{[Schema=\"\",Item=\"FAF_60\"]}[Data]",
+                "in",
+                "    _FAF_60"
+              ]
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ]
+      },
+      {
+        "name": "Foreign_Zone",
+        "lineageTag": "5126dfa4-97c5-4721-892a-1f2260e71cc5",
+        "columns": [
+          {
+            "name": "Zone",
+            "dataType": "string",
+            "sourceColumn": "Zone",
+            "lineageTag": "a9b7c04e-783e-4d92-bb6b-b86283ddd0e9",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Context",
+            "dataType": "string",
+            "sourceColumn": "Context",
+            "lineageTag": "e73e7b79-c86a-4cc3-8eb4-4f2028a4b8d8",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Foreign_Zone",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Access.Database(File.Contents(\"C:\\Users\\jspmc\\OneDrive\\Mirror Projects\\Freight Mirror\\FAF 6.0\\FAF6.0_access.accdb\"), [CreateNavigationProperties=true]),",
+                "    _Foreign_Zone = Source{[Schema=\"\",Item=\"Foreign_Zone\"]}[Data]",
+                "in",
+                "    _Foreign_Zone"
+              ]
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ]
+      },
+      {
+        "name": "Mode",
+        "lineageTag": "a542b5b8-116c-4e17-93a3-5932868880d5",
+        "columns": [
+          {
+            "name": "Mode",
+            "dataType": "string",
+            "sourceColumn": "Mode",
+            "lineageTag": "3530e7ba-233e-4a88-90f1-6078b356dad6",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Context",
+            "dataType": "string",
+            "sourceColumn": "Context",
+            "lineageTag": "4c039f89-2e2c-46e8-9fe2-aef6e7cfa743",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Mode",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Access.Database(File.Contents(\"C:\\Users\\jspmc\\OneDrive\\Mirror Projects\\Freight Mirror\\FAF 6.0\\FAF6.0_access.accdb\"), [CreateNavigationProperties=true]),",
+                "    _Mode = Source{[Schema=\"\",Item=\"Mode\"]}[Data]",
+                "in",
+                "    _Mode"
+              ]
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ]
+      },
+      {
+        "name": "Trade",
+        "lineageTag": "a86ccbd4-e9c8-4d3f-8cbc-4a463e9081af",
+        "columns": [
+          {
+            "name": "Trade",
+            "dataType": "string",
+            "sourceColumn": "Trade",
+            "lineageTag": "16f3e08f-59c1-4e0d-b526-f38f61647ea0",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Context",
+            "dataType": "string",
+            "sourceColumn": "Context",
+            "lineageTag": "6e1db4df-25ab-4d41-a254-f076cfd573b6",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Trade",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Access.Database(File.Contents(\"C:\\Users\\jspmc\\OneDrive\\Mirror Projects\\Freight Mirror\\FAF 6.0\\FAF6.0_access.accdb\"), [CreateNavigationProperties=true]),",
+                "    _Trade = Source{[Schema=\"\",Item=\"Trade\"]}[Data]",
+                "in",
+                "    _Trade"
+              ]
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ]
+      },
+      {
+        "name": "State",
+        "lineageTag": "c9c00188-4029-4b3a-9bfc-58f1fe2ee063",
+        "columns": [
+          {
+            "name": "State",
+            "dataType": "string",
+            "sourceColumn": "State",
+            "lineageTag": "92696b26-4e72-4b48-8161-3012099c8f19",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Context",
+            "dataType": "string",
+            "sourceColumn": "Context",
+            "lineageTag": "c37becc1-e5d1-4dba-b60c-2e2d417bd06e",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "State",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Access.Database(File.Contents(\"C:\\Users\\jspmc\\OneDrive\\Mirror Projects\\Freight Mirror\\FAF 6.0\\FAF6.0_access.accdb\"), [CreateNavigationProperties=true]),",
+                "    _State = Source{[Schema=\"\",Item=\"State\"]}[Data]",
+                "in",
+                "    _State"
+              ]
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ]
+      },
+      {
+        "name": "Origin FAF Zone",
+        "lineageTag": "c1cff31b-67ca-4964-8b9f-657a6b40c17c",
+        "columns": [
+          {
+            "name": "Zone",
+            "dataType": "string",
+            "sourceColumn": "Zone",
+            "lineageTag": "345b91c0-7f6b-4b39-b85b-05be397bf97f",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Context",
+            "dataType": "string",
+            "sourceColumn": "Context",
+            "lineageTag": "d70020ec-efc8-4daf-9892-d53ba5edf32e",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Origin FAF Zone",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = FAF_Zone",
+                "in",
+                "    Source"
+              ]
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ]
+      },
+      {
+        "name": "Destination FAF Zone",
+        "lineageTag": "4385cc09-3895-4e62-a683-0b73a7c374cc",
+        "columns": [
+          {
+            "name": "Zone",
+            "dataType": "string",
+            "sourceColumn": "Zone",
+            "lineageTag": "e52bbc20-94db-491b-9d07-764117395c77",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Context",
+            "dataType": "string",
+            "sourceColumn": "Context",
+            "lineageTag": "5e39efd6-d8c3-4cbb-ac20-be58eb55a68c",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Destination FAF Zone",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = FAF_Zone",
+                "in",
+                "    Source"
+              ]
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ]
+      },
+      {
+        "name": "_CALCS",
+        "lineageTag": "ff5596bd-9463-4379-bd47-91b24a2748dd",
+        "columns": [
+          {
+            "name": "Placeholder",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Placeholder",
+            "formatString": "0",
+            "lineageTag": "1d009b4c-cff7-449a-a6af-d6b6d8e095ca",
+            "summarizeBy": "none",
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "_CALCS",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"i45WMlSKjQUA\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Placeholder = _t]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(Source,{{\"Placeholder\", Int64.Type}})",
+                "in",
+                "    #\"Changed Type\""
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Total Tons (000s)",
+            "description": "Total 2022 shipment tonnage, expressed in thousands of tons.",
+            "expression": [
+              "",
+              "SUM ( FAF_60[tons_2022] )"
+            ],
+            "formatString": "#,0.0",
+            "lineageTag": "d5ee4d9c-f394-48c2-9e59-64685791bcb6"
+          },
+          {
+            "name": "Total Value ($M)",
+            "description": "Total 2022 shipment value, expressed in millions of constant 2022 dollars.",
+            "expression": [
+              "",
+              "SUM ( FAF_60[value_2022] )"
+            ],
+            "formatString": "\\$#,0.0;(\\$#,0.0);\\$#,0.0",
+            "lineageTag": "0a004518-bc55-4030-9d6f-377dc3d9fff4",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ]
+          },
+          {
+            "name": "Value per Ton",
+            "description": "Total shipment value divided by total shipment tonnage, expressed in constant 2022 dollars per ton.",
+            "expression": [
+              "",
+              "DIVIDE (",
+              "    [Total Value ($M)] * 1000,",
+              "    [Total Tons (000s)]",
+              ")"
+            ],
+            "formatString": "\\$#,0.0;(\\$#,0.0);\\$#,0.0",
+            "lineageTag": "2e593932-c62c-41ca-8a9a-5ccc0d06883b",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ]
+      },
+      {
+        "name": "Foreign Origin Zone",
+        "lineageTag": "fa4b6aaa-bf32-455a-a627-9f56fba016c7",
+        "columns": [
+          {
+            "name": "Zone",
+            "dataType": "string",
+            "sourceColumn": "Zone",
+            "lineageTag": "dfaece3a-efe2-4979-b519-869d50f4b964",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Context",
+            "dataType": "string",
+            "sourceColumn": "Context",
+            "lineageTag": "78ad1d32-aa52-4d67-a04e-6d6f34fd5736",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Foreign Origin Zone",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Foreign_Zone",
+                "in",
+                "    Source"
+              ]
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ]
+      },
+      {
+        "name": "Foreign Destination Zone",
+        "lineageTag": "d43309f2-4b5b-41c6-b98b-095e049726f2",
+        "columns": [
+          {
+            "name": "Zone",
+            "dataType": "string",
+            "sourceColumn": "Zone",
+            "lineageTag": "ee522c26-b7d4-431c-ade8-17ac7123e93f",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Context",
+            "dataType": "string",
+            "sourceColumn": "Context",
+            "lineageTag": "8106369d-2337-4236-9c6c-dbefdd05b77c",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Foreign Destination Zone",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = Foreign_Zone",
+                "in",
+                "    Source"
+              ]
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "5ffedfbf-f3a8-7950-f0f1-edbe699d5cd2",
+        "fromTable": "FAF_60",
+        "fromColumn": "dms_orig",
+        "toTable": "Origin FAF Zone",
+        "toColumn": "Zone"
+      },
+      {
+        "name": "a16e8d8b-b5d0-e578-f9a3-43fac7459f9d",
+        "fromTable": "FAF_60",
+        "fromColumn": "dms_dest",
+        "toTable": "Destination FAF Zone",
+        "toColumn": "Zone"
+      },
+      {
+        "name": "b0938991-bd17-014a-19b8-0ba2623e74f2",
+        "fromTable": "FAF_60",
+        "fromColumn": "sctg2",
+        "toTable": "Commodity",
+        "toColumn": "Commodity"
+      },
+      {
+        "name": "bf223db8-7870-150e-3ef8-c1ab396dc1f1",
+        "fromTable": "FAF_60",
+        "fromColumn": "trade_type",
+        "toTable": "Trade",
+        "toColumn": "Trade"
+      },
+      {
+        "name": "a3ffbed9-ee07-29a5-8643-e037956cc08e",
+        "fromTable": "FAF_60",
+        "fromColumn": "dms_mode",
+        "toTable": "Mode",
+        "toColumn": "Mode"
+      },
+      {
+        "name": "31df19ff-b7f1-de85-e64e-1053530d6b64",
+        "fromTable": "FAF_60",
+        "fromColumn": "fr_dest",
+        "toTable": "Foreign Destination Zone",
+        "toColumn": "Zone"
+      },
+      {
+        "name": "94095c36-85e0-18d1-8e2e-501887767871",
+        "fromTable": "FAF_60",
+        "fromColumn": "fr_orig",
+        "toTable": "Foreign Origin Zone",
+        "toColumn": "Zone"
+      }
+    ],
+    "cultures": [
+      {
+        "name": "en-US",
+        "linguisticMetadata": {
+          "content": {
+            "Version": "4.1.0",
+            "Language": "en-US",
+            "Entities": {
+              "commodity": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Commodity"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "commodity": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "product": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "service": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  }
+                ]
+              },
+              "commodity.commodity": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Commodity",
+                    "ConceptualProperty": "Commodity"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "commodity": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "commodity name": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "product": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "service": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  }
+                ],
+                "NameType": "Name"
+              },
+              "commodity.context": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Commodity",
+                    "ConceptualProperty": "Context"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "context": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "situation": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "framework": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "milieu": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "environment": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "setting": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "background": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "perspective": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "circumstance": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "Commodity": {
+                      "State": "Suggested",
+                      "Source": {
+                        "Type": "External",
+                        "Agent": "PowerBI.VisualColumnRename"
+                      },
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "faf_60": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "FAF_60"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "faf 60": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "FAF_60": {
+                      "Type": "Noun",
+                      "State": "Generated",
+                      "Weight": 0.99
+                    }
+                  }
+                ]
+              },
+              "faf_60.fr_orig": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "FAF_60",
+                    "ConceptualProperty": "fr_orig"
+                  }
+                },
+                "State": "Generated",
+                "Visibility": {
+                  "Value": "Hidden"
+                },
+                "Terms": [
+                  {
+                    "fr orig": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "fr_orig": {
+                      "Type": "Noun",
+                      "State": "Generated",
+                      "Weight": 0.99
+                    }
+                  }
+                ]
+              },
+              "faf_60.dms_orig": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "FAF_60",
+                    "ConceptualProperty": "dms_orig"
+                  }
+                },
+                "State": "Generated",
+                "Visibility": {
+                  "Value": "Hidden"
+                },
+                "Terms": [
+                  {
+                    "dms orig": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "dm orig": {
+                      "Type": "Noun",
+                      "State": "Generated",
+                      "Weight": 0.78
+                    }
+                  },
+                  {
+                    "dms_orig": {
+                      "Type": "Noun",
+                      "State": "Generated",
+                      "Weight": 0.99
+                    }
+                  }
+                ]
+              },
+              "faf_60.dms_dest": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "FAF_60",
+                    "ConceptualProperty": "dms_dest"
+                  }
+                },
+                "State": "Generated",
+                "Visibility": {
+                  "Value": "Hidden"
+                },
+                "Terms": [
+                  {
+                    "dms dest": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "dm dest": {
+                      "Type": "Noun",
+                      "State": "Generated",
+                      "Weight": 0.78
+                    }
+                  },
+                  {
+                    "dms_dest": {
+                      "Type": "Noun",
+                      "State": "Generated",
+                      "Weight": 0.99
+                    }
+                  }
+                ]
+              },
+              "faf_60.fr_dest": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "FAF_60",
+                    "ConceptualProperty": "fr_dest"
+                  }
+                },
+                "State": "Generated",
+                "Visibility": {
+                  "Value": "Hidden"
+                },
+                "Terms": [
+                  {
+                    "fr dest": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "fr_dest": {
+                      "Type": "Noun",
+                      "State": "Generated",
+                      "Weight": 0.99
+                    }
+                  }
+                ]
+              },
+              "faf_60.fr_inmode": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "FAF_60",
+                    "ConceptualProperty": "fr_inmode"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "fr inmode": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "fr_inmode": {
+                      "Type": "Noun",
+                      "State": "Generated",
+                      "Weight": 0.99
+                    }
+                  }
+                ]
+              },
+              "faf_60.dms_mode": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "FAF_60",
+                    "ConceptualProperty": "dms_mode"
+                  }
+                },
+                "State": "Generated",
+                "Visibility": {
+                  "Value": "Hidden"
+                },
+                "Terms": [
+                  {
+                    "dms mode": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "dm mode": {
+                      "Type": "Noun",
+                      "State": "Generated",
+                      "Weight": 0.78
+                    }
+                  },
+                  {
+                    "dms_mode": {
+                      "Type": "Noun",
+                      "State": "Generated",
+                      "Weight": 0.99
+                    }
+                  },
+                  {
+                    "dm manner": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "dm method": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "dm genre": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "dm style": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "dm mean": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "dm approach": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "dm type": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "dm way": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "dm kind": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "dm fashion": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.485
+                    }
+                  }
+                ]
+              },
+              "faf_60.fr_outmode": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "FAF_60",
+                    "ConceptualProperty": "fr_outmode"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "fr outmode": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "fr_outmode": {
+                      "Type": "Noun",
+                      "State": "Generated",
+                      "Weight": 0.99
+                    }
+                  }
+                ]
+              },
+              "faf_60.sctg_2": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "FAF_60",
+                    "ConceptualProperty": "sctg2"
+                  }
+                },
+                "State": "Generated",
+                "Visibility": {
+                  "Value": "Hidden"
+                },
+                "Terms": [
+                  {
+                    "sctg 2": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "sctg2": {
+                      "Type": "Noun",
+                      "State": "Generated",
+                      "Weight": 0.99
+                    }
+                  }
+                ]
+              },
+              "faf_60.trade_type": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "FAF_60",
+                    "ConceptualProperty": "trade_type"
+                  }
+                },
+                "State": "Generated",
+                "Visibility": {
+                  "Value": "Hidden"
+                },
+                "Terms": [
+                  {
+                    "trade type": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "trade_type": {
+                      "Type": "Noun",
+                      "State": "Generated",
+                      "Weight": 0.99
+                    }
+                  },
+                  {
+                    "type": {
+                      "State": "Generated",
+                      "Weight": 0.97
+                    }
+                  },
+                  {
+                    "trade category": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.75
+                    }
+                  },
+                  {
+                    "trade genre": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.75
+                    }
+                  },
+                  {
+                    "trade manner": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.75
+                    }
+                  },
+                  {
+                    "trade variety": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.75
+                    }
+                  },
+                  {
+                    "category": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.736
+                    }
+                  },
+                  {
+                    "genre": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.736
+                    }
+                  },
+                  {
+                    "manner": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.736
+                    }
+                  },
+                  {
+                    "variety": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.736
+                    }
+                  },
+                  {
+                    "trade brand": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.727
+                    }
+                  },
+                  {
+                    "trade class": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.727
+                    }
+                  }
+                ]
+              },
+              "faf_60.tons_2022": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "FAF_60",
+                    "ConceptualProperty": "tons_2022"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "tons 2022": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "ton 2022": {
+                      "Type": "Noun",
+                      "State": "Generated",
+                      "Weight": 0.78
+                    }
+                  },
+                  {
+                    "tons_2022": {
+                      "Type": "Noun",
+                      "State": "Generated",
+                      "Weight": 0.99
+                    }
+                  }
+                ]
+              },
+              "faf_60.value_2022": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "FAF_60",
+                    "ConceptualProperty": "value_2022"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "value 2022": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "value_2022": {
+                      "Type": "Noun",
+                      "State": "Generated",
+                      "Weight": 0.99
+                    }
+                  }
+                ]
+              },
+              "foreign_zone": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Foreign_Zone"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "foreign zone": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "Foreign_Zone": {
+                      "Type": "Noun",
+                      "State": "Generated",
+                      "Weight": 0.99
+                    }
+                  },
+                  {
+                    "foreign region": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "foreign precinct": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "foreign district": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "foreign sector": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "foreign neighborhood": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "foreign area": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.485
+                    }
+                  }
+                ]
+              },
+              "foreign_zone.zone": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Foreign_Zone",
+                    "ConceptualProperty": "Zone"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "zone": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "region": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "precinct": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "district": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "sector": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "neighborhood": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "area": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  }
+                ]
+              },
+              "foreign_zone.context": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Foreign_Zone",
+                    "ConceptualProperty": "Context"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "context": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "situation": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "framework": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "milieu": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "environment": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "setting": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "background": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "perspective": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "circumstance": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  }
+                ]
+              },
+              "mode": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Mode"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "mode": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "manner": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "method": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "genre": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "style": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "mean": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "approach": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "way": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "kind": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "fashion": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "form": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  }
+                ]
+              },
+              "mode.mode": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Mode",
+                    "ConceptualProperty": "Mode"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "mode": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "mode name": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "manner": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "method": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "genre": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "style": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "mean": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "approach": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "way": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "kind": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "fashion": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "form": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  }
+                ],
+                "NameType": "Name"
+              },
+              "mode.context": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Mode",
+                    "ConceptualProperty": "Context"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "context": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "situation": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "framework": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "milieu": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "environment": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "setting": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "background": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "perspective": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "circumstance": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "Mode": {
+                      "State": "Suggested",
+                      "Source": {
+                        "Type": "External",
+                        "Agent": "PowerBI.VisualColumnRename"
+                      },
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "trade": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Trade"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "trade": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "skill": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "occupation": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "profession": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "vocation": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "job": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "employment": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "craft": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "commerce": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.466
+                    }
+                  },
+                  {
+                    "industry": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.466
+                    }
+                  },
+                  {
+                    "business": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.452
+                    }
+                  }
+                ]
+              },
+              "trade.trade": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Trade",
+                    "ConceptualProperty": "Trade"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "trade": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "trade name": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "skill": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "occupation": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "profession": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "vocation": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "job": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "employment": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "craft": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "commerce": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.466
+                    }
+                  },
+                  {
+                    "industry": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.466
+                    }
+                  },
+                  {
+                    "business": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.452
+                    }
+                  }
+                ],
+                "NameType": "Name"
+              },
+              "trade.context": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Trade",
+                    "ConceptualProperty": "Context"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "context": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "situation": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "framework": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "milieu": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "environment": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "setting": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "background": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "perspective": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "circumstance": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "Trade Type": {
+                      "State": "Suggested",
+                      "Source": {
+                        "Type": "External",
+                        "Agent": "PowerBI.VisualColumnRename"
+                      },
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "state": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "State"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "state": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "location": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.736
+                    }
+                  },
+                  {
+                    "province": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.736
+                    }
+                  },
+                  {
+                    "territory": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.736
+                    }
+                  },
+                  {
+                    "nation": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.736
+                    }
+                  },
+                  {
+                    "condition": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.714
+                    }
+                  },
+                  {
+                    "country": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.714
+                    }
+                  }
+                ]
+              },
+              "state.state": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "State",
+                    "ConceptualProperty": "State"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "state": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "state name": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "location": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.736
+                    }
+                  },
+                  {
+                    "province": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.736
+                    }
+                  },
+                  {
+                    "territory": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.736
+                    }
+                  },
+                  {
+                    "nation": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.736
+                    }
+                  },
+                  {
+                    "condition": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.714
+                    }
+                  },
+                  {
+                    "country": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.714
+                    }
+                  }
+                ],
+                "NameType": "Name"
+              },
+              "state.context": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "State",
+                    "ConceptualProperty": "Context"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "context": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "situation": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "framework": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "milieu": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "environment": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "setting": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "background": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "perspective": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "circumstance": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  }
+                ]
+              },
+              "origin_FAF_zone": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Origin FAF Zone"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "origin FAF zone": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "FAF zone": {
+                      "State": "Generated",
+                      "Weight": 0.97
+                    }
+                  },
+                  {
+                    "origin faf region": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.508
+                    }
+                  },
+                  {
+                    "origin faf precinct": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.508
+                    }
+                  },
+                  {
+                    "faf region": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "faf precinct": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "origin faf district": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.492
+                    }
+                  },
+                  {
+                    "origin faf sector": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.492
+                    }
+                  },
+                  {
+                    "origin faf neighborhood": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.492
+                    }
+                  },
+                  {
+                    "origin faf area": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.492
+                    }
+                  },
+                  {
+                    "faf district": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "faf sector": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.485
+                    }
+                  }
+                ]
+              },
+              "origin_FAF_zone.zone": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Origin FAF Zone",
+                    "ConceptualProperty": "Zone"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "zone": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "region": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "precinct": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "district": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "sector": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "neighborhood": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "area": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  }
+                ]
+              },
+              "origin_FAF_zone.context": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Origin FAF Zone",
+                    "ConceptualProperty": "Context"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "context": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "situation": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "framework": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "milieu": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "environment": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "setting": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "background": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "perspective": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "circumstance": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "Origin FAF Zone": {
+                      "State": "Suggested",
+                      "Source": {
+                        "Type": "External",
+                        "Agent": "PowerBI.VisualColumnRename"
+                      },
+                      "Weight": 0.9
+                    }
+                  },
+                  {
+                    "Origin": {
+                      "State": "Suggested",
+                      "Source": {
+                        "Type": "External",
+                        "Agent": "PowerBI.VisualColumnRename"
+                      },
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "destination_FAF_zone": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Destination FAF Zone"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "destination FAF zone": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "FAF zone": {
+                      "State": "Generated",
+                      "Weight": 0.97
+                    }
+                  },
+                  {
+                    "destination faf region": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.508
+                    }
+                  },
+                  {
+                    "destination faf precinct": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.508
+                    }
+                  },
+                  {
+                    "faf region": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "faf precinct": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "destination faf district": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.492
+                    }
+                  },
+                  {
+                    "destination faf sector": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.492
+                    }
+                  },
+                  {
+                    "destination faf neighborhood": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.492
+                    }
+                  },
+                  {
+                    "destination faf area": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.492
+                    }
+                  },
+                  {
+                    "faf district": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "faf sector": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.485
+                    }
+                  }
+                ]
+              },
+              "destination_FAF_zone.zone": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Destination FAF Zone",
+                    "ConceptualProperty": "Zone"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "zone": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "region": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "precinct": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "district": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "sector": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "neighborhood": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "area": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  }
+                ]
+              },
+              "destination_FAF_zone.context": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Destination FAF Zone",
+                    "ConceptualProperty": "Context"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "context": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "situation": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "framework": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "milieu": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "environment": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "setting": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "background": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "perspective": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "circumstance": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "Destination FAF Zone": {
+                      "State": "Suggested",
+                      "Source": {
+                        "Type": "External",
+                        "Agent": "PowerBI.VisualColumnRename"
+                      },
+                      "Weight": 0.9
+                    }
+                  },
+                  {
+                    "Destination": {
+                      "State": "Suggested",
+                      "Source": {
+                        "Type": "External",
+                        "Agent": "PowerBI.VisualColumnRename"
+                      },
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "entity__calc": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_CALCS"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "_calc": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
+              "entity__calc.placeholder": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_CALCS",
+                    "ConceptualProperty": "Placeholder"
+                  }
+                },
+                "State": "Generated",
+                "Visibility": {
+                  "Value": "Hidden"
+                },
+                "Terms": [
+                  {
+                    "placeholder": {
+                      "State": "Generated"
+                    }
+                  }
+                ]
+              },
+              "entity__calc.total_tons_000s": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_CALCS",
+                    "ConceptualProperty": "Total Tons (000s)"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "total tons (000s)": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "total tons": {
+                      "State": "Generated",
+                      "Weight": 0.75
+                    }
+                  },
+                  {
+                    "aggregate ton (000)": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.605
+                    }
+                  },
+                  {
+                    "overall ton (000)": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.605
+                    }
+                  },
+                  {
+                    "Freight Tonnage (000s)": {
+                      "State": "Suggested",
+                      "Source": {
+                        "Type": "External",
+                        "Agent": "PowerBI.VisualColumnRename"
+                      },
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "entity__calc.total_value_m": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_CALCS",
+                    "ConceptualProperty": "Total Value ($M)"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "total value ($m)": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "total value": {
+                      "State": "Generated",
+                      "Weight": 0.75
+                    }
+                  },
+                  {
+                    "Freight Value ($M)": {
+                      "State": "Suggested",
+                      "Source": {
+                        "Type": "External",
+                        "Agent": "PowerBI.VisualColumnRename"
+                      },
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "entity__calc.value_per_ton": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_CALCS",
+                    "ConceptualProperty": "Value per Ton"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "value per ton": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "value": {
+                      "State": "Generated",
+                      "Weight": 0.97
+                    }
+                  },
+                  {
+                    "assessment per ton": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.508
+                    }
+                  },
+                  {
+                    "worth per ton": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.492
+                    }
+                  },
+                  {
+                    "price per ton": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.492
+                    }
+                  },
+                  {
+                    "cost per ton": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.492
+                    }
+                  },
+                  {
+                    "charge per ton": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.492
+                    }
+                  },
+                  {
+                    "rate per ton": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.492
+                    }
+                  },
+                  {
+                    "assessment": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "importance per ton": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.482
+                    }
+                  },
+                  {
+                    "significance per ton": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.482
+                    }
+                  },
+                  {
+                    "usefulness per ton": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.482
+                    }
+                  },
+                  {
+                    "Average Value per Ton": {
+                      "State": "Suggested",
+                      "Source": {
+                        "Type": "External",
+                        "Agent": "PowerBI.VisualColumnRename"
+                      },
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "foreign_origin_zone": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Foreign Origin Zone"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "foreign origin zone": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "origin zone": {
+                      "State": "Generated",
+                      "Weight": 0.97
+                    }
+                  },
+                  {
+                    "foreign origin region": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.508
+                    }
+                  },
+                  {
+                    "foreign origin precinct": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.508
+                    }
+                  },
+                  {
+                    "origin region": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "origin precinct": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "foreign origin district": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.492
+                    }
+                  },
+                  {
+                    "foreign origin sector": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.492
+                    }
+                  },
+                  {
+                    "foreign origin neighborhood": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.492
+                    }
+                  },
+                  {
+                    "foreign origin area": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.492
+                    }
+                  },
+                  {
+                    "origin district": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "origin sector": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.485
+                    }
+                  }
+                ]
+              },
+              "foreign_origin_zone.zone": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Foreign Origin Zone",
+                    "ConceptualProperty": "Zone"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "zone": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "region": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "precinct": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "district": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "sector": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "neighborhood": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "area": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  }
+                ]
+              },
+              "foreign_origin_zone.context": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Foreign Origin Zone",
+                    "ConceptualProperty": "Context"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "context": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "situation": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "framework": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "milieu": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "environment": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "setting": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "background": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "perspective": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "circumstance": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "Foreign Origin": {
+                      "State": "Suggested",
+                      "Source": {
+                        "Type": "External",
+                        "Agent": "PowerBI.VisualColumnRename"
+                      },
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "foreign_destination_zone": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Foreign Destination Zone"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "foreign destination zone": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "destination zone": {
+                      "State": "Generated",
+                      "Weight": 0.97
+                    }
+                  },
+                  {
+                    "foreign destination region": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.508
+                    }
+                  },
+                  {
+                    "foreign destination precinct": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.508
+                    }
+                  },
+                  {
+                    "destination region": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "destination precinct": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.5
+                    }
+                  },
+                  {
+                    "foreign destination district": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.492
+                    }
+                  },
+                  {
+                    "foreign destination sector": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.492
+                    }
+                  },
+                  {
+                    "foreign destination neighborhood": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.492
+                    }
+                  },
+                  {
+                    "foreign destination area": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.492
+                    }
+                  },
+                  {
+                    "destination district": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.485
+                    }
+                  },
+                  {
+                    "destination sector": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.485
+                    }
+                  }
+                ]
+              },
+              "foreign_destination_zone.zone": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Foreign Destination Zone",
+                    "ConceptualProperty": "Zone"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "zone": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "region": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "precinct": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "district": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "sector": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "neighborhood": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "area": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  }
+                ]
+              },
+              "foreign_destination_zone.context": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Foreign Destination Zone",
+                    "ConceptualProperty": "Context"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "context": {
+                      "State": "Generated"
+                    }
+                  },
+                  {
+                    "situation": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "framework": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "milieu": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "environment": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.491
+                    }
+                  },
+                  {
+                    "setting": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "background": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "perspective": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "circumstance": {
+                      "Type": "Noun",
+                      "State": "Suggested",
+                      "Source": {
+                        "Agent": "Thesaurus"
+                      },
+                      "Weight": 0.476
+                    }
+                  },
+                  {
+                    "Foreign Destination": {
+                      "State": "Suggested",
+                      "Source": {
+                        "Type": "External",
+                        "Agent": "PowerBI.VisualColumnRename"
+                      },
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              }
+            },
+            "Relationships": {
+              "faf_60_has_trade": {
+                "Binding": {
+                  "ConceptualEntity": "FAF_60"
+                },
+                "State": "Generated",
+                "Roles": {
+                  "faf_60": {
+                    "Target": {
+                      "Entity": "faf_60"
+                    }
+                  },
+                  "trade": {
+                    "Target": {
+                      "Entity": "trade"
+                    }
+                  }
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "faf_60"
+                      },
+                      "Object": {
+                        "Role": "trade"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "faf_60_have_trades"
+                  },
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "trade"
+                      },
+                      "Object": {
+                        "Role": "faf_60"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "trades_have_faf_60"
+                  }
+                ]
+              },
+              "faf_60_has_commodity": {
+                "Binding": {
+                  "ConceptualEntity": "FAF_60"
+                },
+                "State": "Generated",
+                "Roles": {
+                  "faf_60": {
+                    "Target": {
+                      "Entity": "faf_60"
+                    }
+                  },
+                  "commodity": {
+                    "Target": {
+                      "Entity": "commodity"
+                    },
+                    "Nouns": [
+                      {
+                        "sctg 2": {
+                          "State": "Generated"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "faf_60"
+                      },
+                      "Object": {
+                        "Role": "commodity"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "faf_60_have_commodities"
+                  },
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "commodity"
+                      },
+                      "Object": {
+                        "Role": "faf_60"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "commodities_have_faf_60"
+                  }
+                ]
+              },
+              "faf_60_has_destination_FAF_zone": {
+                "Binding": {
+                  "ConceptualEntity": "FAF_60"
+                },
+                "State": "Generated",
+                "Roles": {
+                  "faf_60": {
+                    "Target": {
+                      "Entity": "faf_60"
+                    }
+                  },
+                  "destination_FAF_zone": {
+                    "Target": {
+                      "Entity": "destination_FAF_zone"
+                    }
+                  }
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "faf_60"
+                      },
+                      "Object": {
+                        "Role": "destination_FAF_zone"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "faf_60_have_destination_FAF_zones"
+                  },
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "destination_FAF_zone"
+                      },
+                      "Object": {
+                        "Role": "faf_60"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "destination_FAF_zones_have_faf_60"
+                  }
+                ]
+              },
+              "faf_60_has_origin_FAF_zone": {
+                "Binding": {
+                  "ConceptualEntity": "FAF_60"
+                },
+                "State": "Generated",
+                "Roles": {
+                  "faf_60": {
+                    "Target": {
+                      "Entity": "faf_60"
+                    }
+                  },
+                  "origin_FAF_zone": {
+                    "Target": {
+                      "Entity": "origin_FAF_zone"
+                    }
+                  }
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "faf_60"
+                      },
+                      "Object": {
+                        "Role": "origin_FAF_zone"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "faf_60_have_origin_FAF_zones"
+                  },
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "origin_FAF_zone"
+                      },
+                      "Object": {
+                        "Role": "faf_60"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "origin_FAF_zones_have_faf_60"
+                  }
+                ]
+              },
+              "foreign_destination_zone_has_context": {
+                "Binding": {
+                  "ConceptualEntity": "Foreign Destination Zone"
+                },
+                "State": "Generated",
+                "Roles": {
+                  "foreign_destination_zone": {
+                    "Target": {
+                      "Entity": "foreign_destination_zone"
+                    }
+                  },
+                  "foreign_destination_zone.context": {
+                    "Target": {
+                      "Entity": "foreign_destination_zone.context"
+                    }
+                  }
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "foreign_destination_zone"
+                      },
+                      "Object": {
+                        "Role": "foreign_destination_zone.context"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "foreign_destination_zones_have_contexts"
+                  }
+                ]
+              },
+              "foreign_destination_zone_has_zone": {
+                "Binding": {
+                  "ConceptualEntity": "Foreign Destination Zone"
+                },
+                "State": "Generated",
+                "Roles": {
+                  "foreign_destination_zone": {
+                    "Target": {
+                      "Entity": "foreign_destination_zone"
+                    }
+                  },
+                  "foreign_destination_zone.zone": {
+                    "Target": {
+                      "Entity": "foreign_destination_zone.zone"
+                    }
+                  }
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "foreign_destination_zone"
+                      },
+                      "Object": {
+                        "Role": "foreign_destination_zone.zone"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "foreign_destination_zones_have_zones"
+                  }
+                ]
+              },
+              "foreign_origin_zone_has_context": {
+                "Binding": {
+                  "ConceptualEntity": "Foreign Origin Zone"
+                },
+                "State": "Generated",
+                "Roles": {
+                  "foreign_origin_zone": {
+                    "Target": {
+                      "Entity": "foreign_origin_zone"
+                    }
+                  },
+                  "foreign_origin_zone.context": {
+                    "Target": {
+                      "Entity": "foreign_origin_zone.context"
+                    }
+                  }
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "foreign_origin_zone"
+                      },
+                      "Object": {
+                        "Role": "foreign_origin_zone.context"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "foreign_origin_zones_have_contexts"
+                  }
+                ]
+              },
+              "foreign_origin_zone_has_zone": {
+                "Binding": {
+                  "ConceptualEntity": "Foreign Origin Zone"
+                },
+                "State": "Generated",
+                "Roles": {
+                  "foreign_origin_zone": {
+                    "Target": {
+                      "Entity": "foreign_origin_zone"
+                    }
+                  },
+                  "foreign_origin_zone.zone": {
+                    "Target": {
+                      "Entity": "foreign_origin_zone.zone"
+                    }
+                  }
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "foreign_origin_zone"
+                      },
+                      "Object": {
+                        "Role": "foreign_origin_zone.zone"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "foreign_origin_zones_have_zones"
+                  }
+                ]
+              },
+              "faf_60_has_entity__calc_value_per_ton": {
+                "Binding": {
+                  "ConceptualEntity": "FAF_60"
+                },
+                "State": "Generated",
+                "Roles": {
+                  "faf_60": {
+                    "Target": {
+                      "Entity": "faf_60"
+                    }
+                  },
+                  "entity__calc.value_per_ton": {
+                    "Target": {
+                      "Entity": "entity__calc.value_per_ton"
+                    }
+                  }
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "faf_60"
+                      },
+                      "Object": {
+                        "Role": "entity__calc.value_per_ton"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "faf_60_have_value_per_ton"
+                  }
+                ]
+              },
+              "faf_60_has_entity__calc_total_value_m": {
+                "Binding": {
+                  "ConceptualEntity": "FAF_60"
+                },
+                "State": "Generated",
+                "Roles": {
+                  "faf_60": {
+                    "Target": {
+                      "Entity": "faf_60"
+                    }
+                  },
+                  "entity__calc.total_value_m": {
+                    "Target": {
+                      "Entity": "entity__calc.total_value_m"
+                    }
+                  }
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "faf_60"
+                      },
+                      "Object": {
+                        "Role": "entity__calc.total_value_m"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "faf_60_have_total_value_m"
+                  }
+                ]
+              },
+              "faf_60_has_entity__calc_total_tons_000s": {
+                "Binding": {
+                  "ConceptualEntity": "FAF_60"
+                },
+                "State": "Generated",
+                "Roles": {
+                  "faf_60": {
+                    "Target": {
+                      "Entity": "faf_60"
+                    }
+                  },
+                  "entity__calc.total_tons_000s": {
+                    "Target": {
+                      "Entity": "entity__calc.total_tons_000s"
+                    }
+                  }
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "faf_60"
+                      },
+                      "Object": {
+                        "Role": "entity__calc.total_tons_000s"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "faf_60_have_total_tons_000s"
+                  }
+                ]
+              },
+              "destination_FAF_zone_has_context": {
+                "Binding": {
+                  "ConceptualEntity": "Destination FAF Zone"
+                },
+                "State": "Generated",
+                "Roles": {
+                  "destination_FAF_zone": {
+                    "Target": {
+                      "Entity": "destination_FAF_zone"
+                    }
+                  },
+                  "destination_FAF_zone.context": {
+                    "Target": {
+                      "Entity": "destination_FAF_zone.context"
+                    }
+                  }
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "destination_FAF_zone"
+                      },
+                      "Object": {
+                        "Role": "destination_FAF_zone.context"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "destination_FAF_zones_have_contexts"
+                  }
+                ]
+              },
+              "destination_FAF_zone_has_zone": {
+                "Binding": {
+                  "ConceptualEntity": "Destination FAF Zone"
+                },
+                "State": "Generated",
+                "Roles": {
+                  "destination_FAF_zone": {
+                    "Target": {
+                      "Entity": "destination_FAF_zone"
+                    }
+                  },
+                  "destination_FAF_zone.zone": {
+                    "Target": {
+                      "Entity": "destination_FAF_zone.zone"
+                    }
+                  }
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "destination_FAF_zone"
+                      },
+                      "Object": {
+                        "Role": "destination_FAF_zone.zone"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "destination_FAF_zones_have_zones"
+                  }
+                ]
+              },
+              "origin_FAF_zone_has_context": {
+                "Binding": {
+                  "ConceptualEntity": "Origin FAF Zone"
+                },
+                "State": "Generated",
+                "Roles": {
+                  "origin_FAF_zone": {
+                    "Target": {
+                      "Entity": "origin_FAF_zone"
+                    }
+                  },
+                  "origin_FAF_zone.context": {
+                    "Target": {
+                      "Entity": "origin_FAF_zone.context"
+                    }
+                  }
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "origin_FAF_zone"
+                      },
+                      "Object": {
+                        "Role": "origin_FAF_zone.context"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "origin_FAF_zones_have_contexts"
+                  }
+                ]
+              },
+              "origin_FAF_zone_has_zone": {
+                "Binding": {
+                  "ConceptualEntity": "Origin FAF Zone"
+                },
+                "State": "Generated",
+                "Roles": {
+                  "origin_FAF_zone": {
+                    "Target": {
+                      "Entity": "origin_FAF_zone"
+                    }
+                  },
+                  "origin_FAF_zone.zone": {
+                    "Target": {
+                      "Entity": "origin_FAF_zone.zone"
+                    }
+                  }
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "origin_FAF_zone"
+                      },
+                      "Object": {
+                        "Role": "origin_FAF_zone.zone"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "origin_FAF_zones_have_zones"
+                  }
+                ]
+              },
+              "state_has_context": {
+                "Binding": {
+                  "ConceptualEntity": "State"
+                },
+                "State": "Generated",
+                "Roles": {
+                  "state": {
+                    "Target": {
+                      "Entity": "state"
+                    }
+                  },
+                  "state.context": {
+                    "Target": {
+                      "Entity": "state.context"
+                    }
+                  }
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "state"
+                      },
+                      "Object": {
+                        "Role": "state.context"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "states_have_contexts"
+                  }
+                ]
+              },
+              "state_has_state": {
+                "Binding": {
+                  "ConceptualEntity": "State"
+                },
+                "State": "Generated",
+                "Roles": {
+                  "state": {
+                    "Target": {
+                      "Entity": "state"
+                    }
+                  },
+                  "state.state": {
+                    "Target": {
+                      "Entity": "state.state"
+                    }
+                  }
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "state"
+                      },
+                      "Object": {
+                        "Role": "state.state"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "states_have_states"
+                  },
+                  {
+                    "Name": {
+                      "Subject": {
+                        "Role": "state"
+                      },
+                      "Name": {
+                        "Role": "state.state"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "states_are_names_IDs_of_states"
+                  }
+                ]
+              },
+              "trade_has_context": {
+                "Binding": {
+                  "ConceptualEntity": "Trade"
+                },
+                "State": "Generated",
+                "Roles": {
+                  "trade": {
+                    "Target": {
+                      "Entity": "trade"
+                    }
+                  },
+                  "trade.context": {
+                    "Target": {
+                      "Entity": "trade.context"
+                    }
+                  }
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "trade"
+                      },
+                      "Object": {
+                        "Role": "trade.context"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "trades_have_contexts"
+                  }
+                ]
+              },
+              "trade_has_trade": {
+                "Binding": {
+                  "ConceptualEntity": "Trade"
+                },
+                "State": "Generated",
+                "Roles": {
+                  "trade": {
+                    "Target": {
+                      "Entity": "trade"
+                    }
+                  },
+                  "trade.trade": {
+                    "Target": {
+                      "Entity": "trade.trade"
+                    }
+                  }
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "trade"
+                      },
+                      "Object": {
+                        "Role": "trade.trade"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "trades_have_trades"
+                  },
+                  {
+                    "Name": {
+                      "Subject": {
+                        "Role": "trade"
+                      },
+                      "Name": {
+                        "Role": "trade.trade"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "trades_are_names_IDs_of_trades"
+                  }
+                ]
+              },
+              "mode_has_context": {
+                "Binding": {
+                  "ConceptualEntity": "Mode"
+                },
+                "State": "Generated",
+                "Roles": {
+                  "mode": {
+                    "Target": {
+                      "Entity": "mode"
+                    }
+                  },
+                  "mode.context": {
+                    "Target": {
+                      "Entity": "mode.context"
+                    }
+                  }
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "mode"
+                      },
+                      "Object": {
+                        "Role": "mode.context"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "modes_have_contexts"
+                  }
+                ]
+              },
+              "mode_has_mode": {
+                "Binding": {
+                  "ConceptualEntity": "Mode"
+                },
+                "State": "Generated",
+                "Roles": {
+                  "mode": {
+                    "Target": {
+                      "Entity": "mode"
+                    }
+                  },
+                  "mode.mode": {
+                    "Target": {
+                      "Entity": "mode.mode"
+                    }
+                  }
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "mode"
+                      },
+                      "Object": {
+                        "Role": "mode.mode"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "modes_have_modes"
+                  },
+                  {
+                    "Name": {
+                      "Subject": {
+                        "Role": "mode"
+                      },
+                      "Name": {
+                        "Role": "mode.mode"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "modes_are_names_IDs_of_modes"
+                  }
+                ]
+              },
+              "foreign_zone_has_context": {
+                "Binding": {
+                  "ConceptualEntity": "Foreign_Zone"
+                },
+                "State": "Generated",
+                "Roles": {
+                  "foreign_zone": {
+                    "Target": {
+                      "Entity": "foreign_zone"
+                    }
+                  },
+                  "foreign_zone.context": {
+                    "Target": {
+                      "Entity": "foreign_zone.context"
+                    }
+                  }
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "foreign_zone"
+                      },
+                      "Object": {
+                        "Role": "foreign_zone.context"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "foreign_zones_have_contexts"
+                  }
+                ]
+              },
+              "foreign_zone_has_zone": {
+                "Binding": {
+                  "ConceptualEntity": "Foreign_Zone"
+                },
+                "State": "Generated",
+                "Roles": {
+                  "foreign_zone": {
+                    "Target": {
+                      "Entity": "foreign_zone"
+                    }
+                  },
+                  "foreign_zone.zone": {
+                    "Target": {
+                      "Entity": "foreign_zone.zone"
+                    }
+                  }
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "foreign_zone"
+                      },
+                      "Object": {
+                        "Role": "foreign_zone.zone"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "foreign_zones_have_zones"
+                  }
+                ]
+              },
+              "faf_60_has_value_2022": {
+                "Binding": {
+                  "ConceptualEntity": "FAF_60"
+                },
+                "State": "Generated",
+                "Roles": {
+                  "faf_60": {
+                    "Target": {
+                      "Entity": "faf_60"
+                    }
+                  },
+                  "faf_60.value_2022": {
+                    "Target": {
+                      "Entity": "faf_60.value_2022"
+                    }
+                  }
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "faf_60"
+                      },
+                      "Object": {
+                        "Role": "faf_60.value_2022"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "faf_60_have_value_2022"
+                  }
+                ]
+              },
+              "faf_60_has_tons_2022": {
+                "Binding": {
+                  "ConceptualEntity": "FAF_60"
+                },
+                "State": "Generated",
+                "Roles": {
+                  "faf_60": {
+                    "Target": {
+                      "Entity": "faf_60"
+                    }
+                  },
+                  "faf_60.tons_2022": {
+                    "Target": {
+                      "Entity": "faf_60.tons_2022"
+                    }
+                  }
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "faf_60"
+                      },
+                      "Object": {
+                        "Role": "faf_60.tons_2022"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "faf_60_have_tons_2022"
+                  }
+                ]
+              },
+              "faf_60_has_fr_outmode": {
+                "Binding": {
+                  "ConceptualEntity": "FAF_60"
+                },
+                "State": "Generated",
+                "Roles": {
+                  "faf_60": {
+                    "Target": {
+                      "Entity": "faf_60"
+                    }
+                  },
+                  "faf_60.fr_outmode": {
+                    "Target": {
+                      "Entity": "faf_60.fr_outmode"
+                    }
+                  }
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "faf_60"
+                      },
+                      "Object": {
+                        "Role": "faf_60.fr_outmode"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "faf_60_have_fr_outmode"
+                  }
+                ]
+              },
+              "faf_60_has_fr_inmode": {
+                "Binding": {
+                  "ConceptualEntity": "FAF_60"
+                },
+                "State": "Generated",
+                "Roles": {
+                  "faf_60": {
+                    "Target": {
+                      "Entity": "faf_60"
+                    }
+                  },
+                  "faf_60.fr_inmode": {
+                    "Target": {
+                      "Entity": "faf_60.fr_inmode"
+                    }
+                  }
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "faf_60"
+                      },
+                      "Object": {
+                        "Role": "faf_60.fr_inmode"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "faf_60_have_fr_inmodes"
+                  }
+                ]
+              },
+              "commodity_has_context": {
+                "Binding": {
+                  "ConceptualEntity": "Commodity"
+                },
+                "State": "Generated",
+                "Roles": {
+                  "commodity": {
+                    "Target": {
+                      "Entity": "commodity"
+                    }
+                  },
+                  "commodity.context": {
+                    "Target": {
+                      "Entity": "commodity.context"
+                    }
+                  }
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "commodity"
+                      },
+                      "Object": {
+                        "Role": "commodity.context"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "commodities_have_contexts"
+                  }
+                ]
+              },
+              "commodity_has_commodity": {
+                "Binding": {
+                  "ConceptualEntity": "Commodity"
+                },
+                "State": "Generated",
+                "Roles": {
+                  "commodity": {
+                    "Target": {
+                      "Entity": "commodity"
+                    }
+                  },
+                  "commodity.commodity": {
+                    "Target": {
+                      "Entity": "commodity.commodity"
+                    }
+                  }
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "commodity"
+                      },
+                      "Object": {
+                        "Role": "commodity.commodity"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "commodities_have_commodities"
+                  },
+                  {
+                    "Name": {
+                      "Subject": {
+                        "Role": "commodity"
+                      },
+                      "Name": {
+                        "Role": "commodity.commodity"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "commodities_are_names_IDs_of_commodities"
+                  }
+                ]
+              },
+              "faf_60_has_mode": {
+                "Binding": {
+                  "ConceptualEntity": "FAF_60"
+                },
+                "State": "Generated",
+                "Roles": {
+                  "faf_60": {
+                    "Target": {
+                      "Entity": "faf_60"
+                    }
+                  },
+                  "mode": {
+                    "Target": {
+                      "Entity": "mode"
+                    },
+                    "Nouns": [
+                      {
+                        "dms mode": {
+                          "State": "Generated"
+                        }
+                      }
+                    ]
+                  }
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "faf_60"
+                      },
+                      "Object": {
+                        "Role": "mode"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "faf_60_have_modes"
+                  },
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "mode"
+                      },
+                      "Object": {
+                        "Role": "faf_60"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "modes_have_faf_60"
+                  }
+                ]
+              },
+              "faf_60_has_foreign_destination_zone": {
+                "Binding": {
+                  "ConceptualEntity": "FAF_60"
+                },
+                "State": "Generated",
+                "Roles": {
+                  "faf_60": {
+                    "Target": {
+                      "Entity": "faf_60"
+                    }
+                  },
+                  "foreign_destination_zone": {
+                    "Target": {
+                      "Entity": "foreign_destination_zone"
+                    }
+                  }
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "faf_60"
+                      },
+                      "Object": {
+                        "Role": "foreign_destination_zone"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "faf_60_have_foreign_destination_zones"
+                  },
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "foreign_destination_zone"
+                      },
+                      "Object": {
+                        "Role": "faf_60"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "foreign_destination_zones_have_faf_60"
+                  }
+                ]
+              },
+              "faf_60_has_foreign_origin_zone": {
+                "Binding": {
+                  "ConceptualEntity": "FAF_60"
+                },
+                "State": "Generated",
+                "Roles": {
+                  "faf_60": {
+                    "Target": {
+                      "Entity": "faf_60"
+                    }
+                  },
+                  "foreign_origin_zone": {
+                    "Target": {
+                      "Entity": "foreign_origin_zone"
+                    }
+                  }
+                },
+                "Phrasings": [
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "faf_60"
+                      },
+                      "Object": {
+                        "Role": "foreign_origin_zone"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "faf_60_have_foreign_origin_zones"
+                  },
+                  {
+                    "Attribute": {
+                      "Subject": {
+                        "Role": "foreign_origin_zone"
+                      },
+                      "Object": {
+                        "Role": "faf_60"
+                      }
+                    },
+                    "State": "Generated",
+                    "Weight": 0.99,
+                    "ID": "foreign_origin_zones_have_faf_60"
+                  }
+                ]
+              }
+            },
+            "Agents": {
+              "Internal": {
+                "Version": "1.1.0"
+              }
+            }
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "expressions": [
+      {
+        "name": "FAF_Zone",
+        "kind": "m",
+        "expression": [
+          "let",
+          "    Source = Access.Database(File.Contents(\"C:\\Users\\jspmc\\OneDrive\\Mirror Projects\\Freight Mirror\\FAF 6.0\\FAF6.0_access.accdb\"), [CreateNavigationProperties=true]),",
+          "    _FAF_Zone = Source{[Schema=\"\",Item=\"FAF_Zone\"]}[Data]",
+          "in",
+          "    _FAF_Zone"
+        ],
+        "lineageTag": "93af16e2-993a-4880-b338-fb559d99c32c",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ]
+      }
+    ],
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"Commodity\",\"FAF_60\",\"FAF_Zone\",\"Foreign_Zone\",\"Mode\",\"Trade\",\"State\",\"Origin FAF Zone\",\"Destination FAF Zone\",\"_CALCS\",\"Foreign Origin Zone\",\"Foreign Destination Zone\"]"
+      },
+      {
+        "name": "TabularEditor_SerializeOptions",
+        "value": "{\"IgnoreInferredObjects\":true,\"IgnoreInferredProperties\":true,\"IgnoreTimestamps\":true,\"SplitMultilineStrings\":true,\"PrefixFilenames\":false,\"LocalTranslations\":false,\"LocalPerspectives\":false,\"SortArrays\":false,\"LocalRelationships\":false,\"Levels\":[\"Data Sources\",\"Shared Expressions\",\"Perspectives\",\"Relationships\",\"Roles\",\"Tables\",\"Tables/Columns\",\"Tables/Hierarchies\",\"Tables/Measures\",\"Tables/Partitions\",\"Tables/Calculation Items\",\"Translations\"]}"
+      },
+      {
+        "name": "__TEdtr",
+        "value": "1"
+      }
+    ]
+  }
+}
